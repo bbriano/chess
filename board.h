@@ -19,9 +19,8 @@ typedef struct {
     int whites_turn;
 } board_t;
 
-// Allocate new board; put pieces in initial position.
-// Call free(board) after use.
-board_t *board_new();
+// Put pieces in initial position.
+void board_init(board_t *b);
 
 // Display board as ascii grid.
 void board_print(board_t *b);

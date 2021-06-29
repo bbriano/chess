@@ -2,10 +2,8 @@
 #include <stdlib.h>
 #include "board.h"
 
-board_t *board_new()
+void board_init(board_t *b)
 {
-    board_t *b = malloc(sizeof(board_t));
-
     for (int rank=3; rank<=6; rank++) {
         for (int col=1; col<=8; col++) {
             b->cell[board_coordinate_to_index(rank, col)] = ' ';
@@ -35,8 +33,6 @@ board_t *board_new()
     for (int file=1; file<=8; file++) {
         b->cell[board_coordinate_to_index(7, file)] = PIECE_BLACK_PAWN;
     }
-
-    return b;
 }
 
 void board_print(board_t *b)
