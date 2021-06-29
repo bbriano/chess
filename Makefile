@@ -1,4 +1,16 @@
-CFLAGS= -Wall -Wextra
+CFLAGS = -std=c99 -Wall -Wextra
+EXECUTABLE = chess
+OBJECTS = main.o board.o pgn.o
 
-chess: main.c board.c board.h
-	$(CC) $(CFLAGS) main.c board.c -o chess
+
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(CFLAGS) main.o board.o pgn.o -o $(EXECUTABLE)
+
+.o:
+	$(CC) $(CFLAGS) -c $<
+
+
+.PHONY: clean
+
+clean:
+	$(RM) *.o $(EXECUTABLE)
