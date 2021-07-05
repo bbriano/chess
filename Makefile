@@ -1,10 +1,10 @@
 CFLAGS = -std=c99 -Wall -Wextra
 EXECUTABLE = chess
-OBJECTS = main.o board.o pgn.o
+OBJECTS = chess.o
 
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CC) $(CFLAGS) main.o board.o pgn.o -o $(EXECUTABLE)
+	$(CC) -o $(EXECUTABLE) $(OBJECTS)
 
 .o:
 	$(CC) $(CFLAGS) -c $<
@@ -13,4 +13,4 @@ $(EXECUTABLE): $(OBJECTS)
 .PHONY: clean
 
 clean:
-	$(RM) *.o $(EXECUTABLE)
+	$(RM) $(OBJECTS) $(EXECUTABLE)

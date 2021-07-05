@@ -1,3 +1,6 @@
-chess
+.DS_Store
+.netrwhist
+tags
 .ccls-cache
 *.o
+chess

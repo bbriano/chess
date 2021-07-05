@@ -1,0 +1,8 @@
+Play chess on the terminal.
+
+Use:
+    chess
+
+Install (make):
+    make
+    mv chess /your/favourite/path/bin
