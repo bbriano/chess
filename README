@@ -1,8 +1,8 @@
 Play chess on the terminal.
 
 Use:
-    chess
+    $ chess
 
 Install (cmake):
-    make
-    mv chess /your/favourite/path/bin
+    $ make
+    $ mv chess /your/favourite/path/bin
