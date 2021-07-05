@@ -3,6 +3,6 @@ Play chess on the terminal.
 Use:
     chess
 
-Install (make):
+Install (cmake):
     make
     mv chess /your/favourite/path/bin
