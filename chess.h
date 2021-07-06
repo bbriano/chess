@@ -24,7 +24,8 @@ void clear_screen();
 void board_init(uint8_t board[64]);
 
 // Display board to stdout.
-void board_print(uint8_t board[64]);
+void board_print(uint8_t board[64]);        // With file and rank label.
+void board_print_nolabel(uint8_t board[64]);
 
 // Converts algebraic notation to board index.
 // Mapping (index:square): 0:a1 1:b1 .. 7:h1 8:a2 .. 63:h8.

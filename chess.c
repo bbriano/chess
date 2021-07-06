@@ -12,7 +12,8 @@ int main(int argc, char **argv)
     (void) argc;        // Silence -Wunused-parameter
 
     // Set default options.
-    bool opt_clear = false;      // -c to set true
+    bool opt_clear = false;     // -c to set true
+    bool opt_label = true;      // -l to set false
 
     // Parse options.
     while (*++argv) {
@@ -25,6 +26,9 @@ int main(int argc, char **argv)
             switch (*c) {
                 case 'c':
                     opt_clear = true;
+                    break;
+                case 'l':
+                    opt_label = false;
                     break;
                 default:
                     fprintf(stderr, USAGE);
@@ -44,7 +48,11 @@ int main(int argc, char **argv)
             clear_screen();
         }
 
-        board_print(board);
+        if (opt_label) {
+            board_print(board);
+        } else {
+            board_print_nolabel(board);
+        }
 
         while (true) {
             if (whites_turn) {
@@ -126,6 +134,22 @@ void board_print(uint8_t board[64])
     }
 
     printf("     A   B   C   D   E   F   G   H\n");
+}
+
+void board_print_nolabel(uint8_t board[64])
+{
+    printf("+---+---+---+---+---+---+---+---+\n");
+
+    for (int rank=8; rank>=1; rank--) {
+        printf("|");
+
+        for (int file='A'; file<='H'; file++) {
+            printf(" %c |", board[algebraic_to_index(file, rank)]);
+        }
+
+        printf("\n");
+        printf("+---+---+---+---+---+---+---+---+\n");
+    }
 }
 
 uint8_t algebraic_to_index(uint8_t file, uint8_t rank)
