@@ -115,7 +115,7 @@ void board_print(uint8_t board[64])
     printf("   +---+---+---+---+---+---+---+---+\n");
 
     for (int rank=8; rank>=1; rank--) {
-        printf(" %d |", rank);      // Left rank label column.
+        printf(" %d |", rank);      // Left rank column label.
 
         for (int file='A'; file<='H'; file++) {
             printf(" %c |", board[algebraic_to_index(file, rank)]);

@@ -17,8 +17,7 @@
 #define BLACK_PAWN 'p'
 #define NO_PIECE ' '
 
-// Clears the terminal screen.
-// Uses "cls" on windows and "clear" on other systems.
+// Clears the terminal screen with "cls" on windows and "clear" on other systems.
 void clear_screen();
 
 // Put pieces in initial position.
@@ -29,9 +28,9 @@ void board_print(uint8_t board[64]);
 
 // Converts algebraic notation to board index.
 // Mapping (index:square): 0:a1 1:b1 .. 7:h1 8:a2 .. 63:h8.
+// Return -1 on invalid input.
 // file -- lowercase/uppercase letter between A and H.
 // rank -- ascii representation or number between 1 and 8.
-// Return -1 on invalid input.
 uint8_t algebraic_to_index(uint8_t file, uint8_t rank);
 
 #endif      // CHESS_H
