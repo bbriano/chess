@@ -17,21 +17,31 @@
 #define BLACK_PAWN 'p'
 #define NO_PIECE ' '
 
+// Represents a chess board with 64 squares.
+//      index   square
+//      0       a1
+//      1       b1
+//      ..      ..
+//      7       h1
+//      8       a2
+//      ..      ..
+//      63      h8
+typedef uint8_t board_t[64];
+
 // Clears the terminal screen with "cls" on windows and "clear" on other systems.
 void clear_screen();
 
 // Put pieces in initial position.
-void board_init(uint8_t board[64]);
+void board_init(board_t);
 
 // Display board to stdout.
-void board_print(uint8_t board[64]);        // With file and rank label.
-void board_print_nolabel(uint8_t board[64]);
+void board_print(board_t);      // With file and rank label.
+void board_print_nolabel(board_t);
 
-// Converts algebraic notation to board index.
-// Mapping (index:square): 0:a1 1:b1 .. 7:h1 8:a2 .. 63:h8.
-// Return -1 on invalid input.
+// Converts algebraic notation to board index [0..63].
+// Returns board index or -1 on invalid input.
 // file -- lowercase/uppercase letter between A and H.
 // rank -- ascii representation or number between 1 and 8.
-uint8_t algebraic_to_index(uint8_t file, uint8_t rank);
+int8_t algebraic_to_index(uint8_t file, uint8_t rank);
 
 #endif      // CHESS_H

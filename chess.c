@@ -37,7 +37,7 @@ int main(int argc, char **argv)
         }
     }
 
-    uint8_t board[64];
+    board_t board;
     board_init(board);
     bool whites_turn = true;
     bool game_over = false;
@@ -81,7 +81,7 @@ void clear_screen()
 #endif
 }
 
-void board_init(uint8_t board[64])
+void board_init(board_t board)
 {
     // Set empty squares.
     for (int rank=3; rank<=6; rank++) {
@@ -117,7 +117,7 @@ void board_init(uint8_t board[64])
     }
 }
 
-void board_print(uint8_t board[64])
+void board_print(board_t board)
 {
     printf("     A   B   C   D   E   F   G   H\n");
     printf("   +---+---+---+---+---+---+---+---+\n");
@@ -136,7 +136,7 @@ void board_print(uint8_t board[64])
     printf("     A   B   C   D   E   F   G   H\n");
 }
 
-void board_print_nolabel(uint8_t board[64])
+void board_print_nolabel(board_t board)
 {
     printf("+---+---+---+---+---+---+---+---+\n");
 
@@ -152,7 +152,7 @@ void board_print_nolabel(uint8_t board[64])
     }
 }
 
-uint8_t algebraic_to_index(uint8_t file, uint8_t rank)
+int8_t algebraic_to_index(uint8_t file, uint8_t rank)
 {
     // Check within range.
     bool file_upper = 'A' <= file && file <= 'H';
