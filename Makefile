@@ -1,4 +1,4 @@
-CFLAGS = -std=c99 -Wall -Wextra
+CFLAGS = -std=c99 -Wall -Wextra -pedantic
 EXECUTABLE = chess
 OBJECTS = chess.o
 
