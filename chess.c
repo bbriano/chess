@@ -152,7 +152,7 @@ void board_print_nolabel(board_t board)
     }
 }
 
-int8_t algebraic_to_index(uint8_t file, uint8_t rank)
+int8_t algebraic_to_index(char file, char rank)
 {
     // Check within range.
     bool file_upper = 'A' <= file && file <= 'H';

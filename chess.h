@@ -26,7 +26,7 @@
 //      8       a2
 //      ..      ..
 //      63      h8
-typedef uint8_t board_t[64];
+typedef char board_t[64];
 
 // Clears the terminal screen with "cls" on windows and "clear" on other systems.
 void clear_screen();
@@ -42,6 +42,6 @@ void board_print_nolabel(board_t);
 // Returns board index or -1 on invalid input.
 // file -- lowercase/uppercase letter between A and H.
 // rank -- ascii representation or number between 1 and 8.
-int8_t algebraic_to_index(uint8_t file, uint8_t rank);
+int8_t algebraic_to_index(char file, char rank);
 
 #endif      // CHESS_H
