@@ -18,14 +18,14 @@
 #define NO_PIECE ' '
 
 // Represents a chess board with 64 squares.
-//      index   square
-//      0       a1
-//      1       b1
-//      ..      ..
-//      7       h1
-//      8       a2
-//      ..      ..
-//      63      h8
+//	index	square
+//	0	a1
+//	1	b1
+//	..	..
+//	7	h1
+//	8	a2
+//	..	..
+//	63	h8
 typedef char board_t[64];
 
 // Clears the terminal screen with "cls" on windows and "clear" on other systems.
@@ -35,7 +35,7 @@ void clear_screen();
 void board_init(board_t);
 
 // Display board to stdout.
-void board_print(board_t);      // With file and rank label.
+void board_print(board_t);		// With file and rank label.
 void board_print_nolabel(board_t);
 
 // Converts algebraic notation to board index [0..63].
@@ -44,4 +44,4 @@ void board_print_nolabel(board_t);
 // rank -- ascii representation or number between 1 and 8.
 int8_t algebraic_to_index(char file, char rank);
 
-#endif      // CHESS_H
+#endif		// CHESS_H
