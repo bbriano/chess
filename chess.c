@@ -25,15 +25,15 @@ int main(int argc, char **argv)
 		char *c = *argv;
 		while (*++c) {
 			switch (*c) {
-				case 'c':
-					opt_clear = true;
-					break;
-				case 'l':
-					opt_label = false;
-					break;
-				default:
-					fprintf(stderr, USAGE);
-					exit(1);
+			case 'c':
+				opt_clear = true;
+				break;
+			case 'l':
+				opt_label = false;
+				break;
+			default:
+				fprintf(stderr, USAGE);
+				exit(1);
 			}
 		}
 	}
@@ -120,7 +120,7 @@ void board_init(board_t board)
 
 void board_print(board_t board)
 {
-	printf("	 A	 B	 C	 D	 E	 F	 G	 H\n");
+	printf("     A   B   C   D   E   F   G   H\n");
 	printf("   +---+---+---+---+---+---+---+---+\n");
 
 	for (int rank=8; rank>=1; rank--) {
@@ -134,7 +134,7 @@ void board_print(board_t board)
 		printf("   +---+---+---+---+---+---+---+---+\n");
 	}
 
-	printf("	 A	 B	 C	 D	 E	 F	 G	 H\n");
+	printf("     A   B   C   D   E   F   G   H\n");
 }
 
 void board_print_nolabel(board_t board)
