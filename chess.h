@@ -35,8 +35,8 @@ void clear_screen();
 void board_init(board_t);
 
 // Display board to stdout.
-void board_print(board_t);		// With file and rank label.
-void board_print_nolabel(board_t);
+void board_print(board_t);
+void board_print_label(board_t);	// With file and rank label.
 
 // Converts algebraic notation to board index [0..63].
 // Returns board index or -1 on invalid input.

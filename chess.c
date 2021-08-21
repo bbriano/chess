@@ -50,9 +50,9 @@ int main(int argc, char **argv)
 		}
 
 		if (opt_label) {
-			board_print(board);
+			board_print_label(board);
 		} else {
-			board_print_nolabel(board);
+			board_print(board);
 		}
 
 		while (true) {
@@ -118,7 +118,25 @@ void board_init(board_t board)
 	}
 }
 
+// Prints the chess board to stdout.
 void board_print(board_t board)
+{
+	printf("+---+---+---+---+---+---+---+---+\n");
+
+	for (int rank=8; rank>=1; rank--) {
+		printf("|");
+
+		for (int file='A'; file<='H'; file++) {
+			printf(" %c |", board[algebraic_to_index(file, rank)]);
+		}
+
+		printf("\n");
+		printf("+---+---+---+---+---+---+---+---+\n");
+	}
+}
+
+// Prints the chess board to stdout with label around the board.
+void board_print_label(board_t board)
 {
 	printf("     A   B   C   D   E   F   G   H\n");
 	printf("   +---+---+---+---+---+---+---+---+\n");
@@ -135,22 +153,6 @@ void board_print(board_t board)
 	}
 
 	printf("     A   B   C   D   E   F   G   H\n");
-}
-
-void board_print_nolabel(board_t board)
-{
-	printf("+---+---+---+---+---+---+---+---+\n");
-
-	for (int rank=8; rank>=1; rank--) {
-		printf("|");
-
-		for (int file='A'; file<='H'; file++) {
-			printf(" %c |", board[algebraic_to_index(file, rank)]);
-		}
-
-		printf("\n");
-		printf("+---+---+---+---+---+---+---+---+\n");
-	}
 }
 
 int8_t algebraic_to_index(char file, char rank)
