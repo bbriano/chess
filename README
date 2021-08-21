@@ -1,0 +1,5 @@
+Chess is a board game.
+
+Install:
+	$ make
+	$ mv chess /your/favourite/path/bin
